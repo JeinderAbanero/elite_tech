@@ -13,6 +13,15 @@ import asesoriaImg from './assets/Asesoria.jpg';
 import gamerEliteImg from './assets/Ensamble Gamer Elite X.jpg';
 import edicionImg from './assets/PC Profesional para Edición 4K.jpg';
 import workstationImg from './assets/Workstation Profesional Creativo.jpg';
+import intelLogo from './assets/Marcas/Intel-Logo 2.png';
+import msiLogo from './assets/Marcas/msi-logo-for_digital_use_b 2.png';
+import corsairLogo from './assets/Marcas/CORSAIRLogo2020_horiz_K 1.png';
+import nvidiaLogo from './assets/Marcas/nvidia-geforce-rtx-logo 1.png';
+import amdLogo from './assets/Marcas/Amd logo 2.png';
+import logitechLogo from './assets/Marcas/logitech-logo 2.png';
+import asusLogo from './assets/Marcas/Asus 2.png';
+import aorusLogo from './assets/Marcas/aorus-thumb 2.png';
+import aboutUsImage from './assets/about-us.webp';
 
 const testimonials = [
   {
@@ -167,7 +176,7 @@ function App() {
             </div>
 
             <div className="mt-16 text-center">
-              <div className="inline-flex gap-8 items-center justify-center bg-[#3A4344] p-6 rounded">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center bg-[#556465] p-6 rounded mx-4 sm:mx-0">
                 <div className="text-white">
                   <span className="block text-2xl font-bold mb-1">¿No estás seguro de qué servicio necesitas?</span>
                   <span className="text-gray-300">Contáctanos y te ayudaremos a encontrar la mejor solución</span>
@@ -448,12 +457,12 @@ function App() {
             </div>
 
             <div className="mt-16 text-center">
-              <div className="inline-flex gap-8 items-center justify-center bg-[#556465] p-6 rounded">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center bg-[#556465] p-6 rounded mx-4 sm:mx-0">
                 <div className="text-white">
-                  <span className="block text-2xl font-bold mb-1">¿Buscas una configuración personalizada?</span>
-                  <span className="text-gray-200">Podemos adaptar cualquiera de estos equipos a tus necesidades específicas</span>
+                  <span className="block text-xl sm:text-2xl font-bold mb-1">¿Buscas una configuración personalizada?</span>
+                  <span className="text-gray-200 text-sm sm:text-base">Podemos adaptar cualquiera de estos equipos a tus necesidades específicas</span>
                 </div>
-                <button className="bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium whitespace-nowrap">
+                <button className="w-full sm:w-auto bg-yellow-500 text-black px-6 sm:px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium">
                   Personalizar ahora
                 </button>
               </div>
@@ -475,42 +484,42 @@ function App() {
             <div className="brand-container lg:hidden relative">
               <div className="brand-scroll flex gap-8 items-center justify-between">
                 <img
-                  src="/src/assets/Marcas/Intel-Logo 2.png"
+                  src={intelLogo}
                   alt="Intel"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/msi-logo-for_digital_use_b 2.png"
+                  src={msiLogo}
                   alt="MSI"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/CORSAIRLogo2020_horiz_K 1.png"
+                  src={corsairLogo}
                   alt="Corsair"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/nvidia-geforce-rtx-logo 1.png"
+                  src={nvidiaLogo}
                   alt="NVIDIA"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/Amd logo 2.png"
+                  src={amdLogo}
                   alt="AMD"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/logitech-logo 2.png"
+                  src={logitechLogo}
                   alt="Logitech"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/Asus 2.png"
+                  src={asusLogo}
                   alt="ASUS"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/src/assets/Marcas/aorus-thumb 2.png"
+                  src={aorusLogo}
                   alt="AORUS"
                   className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
@@ -520,42 +529,42 @@ function App() {
             {/* Desktop view with grid */}
             <div className="hidden lg:grid grid-cols-4 gap-16 items-center">
               <img
-                src="/src/assets/Marcas/Intel-Logo 2.png"
+                src={intelLogo}
                 alt="Intel"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/msi-logo-for_digital_use_b 2.png"
+                src={msiLogo}
                 alt="MSI"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/CORSAIRLogo2020_horiz_K 1.png"
+                src={corsairLogo}
                 alt="Corsair"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/nvidia-geforce-rtx-logo 1.png"
+                src={nvidiaLogo}
                 alt="NVIDIA"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/Amd logo 2.png"
+                src={amdLogo}
                 alt="AMD"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/logitech-logo 2.png"
+                src={logitechLogo}
                 alt="Logitech"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/Asus 2.png"
+                src={asusLogo}
                 alt="ASUS"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
               <img
-                src="/src/assets/Marcas/aorus-thumb 2.png"
+                src={aorusLogo}
                 alt="AORUS"
                 className="h-16 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity transform hover:scale-105 duration-200"
               />
@@ -606,9 +615,9 @@ function App() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full "></div>
                   <img
-                    src="/src/assets/about-us.webp"
+                    src={aboutUsImage}
                     alt="Nuestro equipo trabajando"
-                    className="relative z-10 rounded-lg w-full h-[500px] object-cover"
+                    className="relative z-10 rounded-lg w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center"
                   />
                 </div>
               </div>
