@@ -424,7 +424,7 @@ function App() {
         </section>
 
         {/* Featured Products Section */}
-        <section 
+        <section id="productos"
           className="py-20"
           style={{ backgroundColor: '#657475' }}
         >
@@ -626,7 +626,7 @@ function App() {
         </section>
 
         {/* Testimonials Section */}
-        <section 
+        <section id="testimonios"
           className="py-20"
           style={{ backgroundColor: '#4A5354' }}
         >
@@ -646,7 +646,7 @@ function App() {
         </section>
 
         {/* FAQ Section */}
-        <FAQ />
+        <FAQ  />
 
         {/* Contact Form */}
         <ContactForm />

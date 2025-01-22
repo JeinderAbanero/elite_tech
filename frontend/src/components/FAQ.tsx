@@ -33,7 +33,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 };
 
 export const FAQ = () => (
-  <section className="py-20" style={{ backgroundColor: '#CDD4D4' }}>
+  <section id="faq" className="py-20" style={{ backgroundColor: '#CDD4D4' }}>
     <div className="container mx-auto px-6">
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:w-1/3 flex flex-col items-center">

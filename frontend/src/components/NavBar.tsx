@@ -94,10 +94,11 @@ export const NavBar = () => {
 
           {/* Botón Contactar - Derecha */}
           <div className="hidden lg:flex flex-1 justify-end">
-            <button className="bg-yellow-500 text-black px-8 py-2 rounded-md font-medium hover:bg-yellow-400 transition-colors">
-              Contactar
-            </button>
+          <a href="#contacto" className="inline-block bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium">
+                    Contactar
+          </a>
           </div>
+
 
           {/* Mobile menu button */}
           <button
@@ -174,12 +175,13 @@ export const NavBar = () => {
                 activeLink === 'contacto' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
             </a>
-            <button 
-              className="bg-yellow-500 text-black px-8 py-2 rounded-md font-medium hover:bg-yellow-400 transition-colors w-[calc(100%-3rem)]"
+            <a 
+              href="#contacto"
+              className="bg-yellow-500 text-black px-8 py-2 rounded-md font-medium hover:bg-yellow-400 transition-colors w-[calc(100%-3rem)] text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Contactar
-            </button>
+            </a>
           </div>
         </div>
       )}
