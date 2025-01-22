@@ -6,6 +6,7 @@ import { TestimonialCard } from "./components/TestimonialCard";
 import { FAQ } from "./components/FAQ";
 import { ContactForm } from "./components/ContactForm";
 import { Footer } from "./components/Footer";
+import { LeadPopup } from "./components/LeadPopup";
 import streamingStation from './assets/streaming-station.webp';
 import ensambleImg from './assets/Ensamble.jpg';
 import prebuiltImg from './assets/pre-built.png';
@@ -96,12 +97,24 @@ function App() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-yellow-500 text-black px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors font-medium flex items-center justify-center gap-2 text-lg">
-                    Configurar mi PC
+                  <button 
+                    onClick={() => {
+                      const section = document.getElementById('productos');
+                      section?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-yellow-500 text-black px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors font-medium flex items-center justify-center gap-2 text-lg"
+                  >
+                    Ver Productos
                     <ChevronRight size={24} />
                   </button>
-                  <button className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-md hover:bg-yellow-500 hover:text-black transition-colors font-medium flex items-center justify-center gap-2 text-lg">
-                    Ver Catálogo
+                  <button 
+                    onClick={() => {
+                      const section = document.getElementById('contacto');
+                      section?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-md hover:bg-yellow-500 hover:text-black transition-colors font-medium flex items-center justify-center gap-2 text-lg"
+                  >
+                    Contactar
                   </button>
                 </div>
               </div>
@@ -648,8 +661,13 @@ function App() {
         {/* FAQ Section */}
         <FAQ  />
 
+        {/* Lead Popup */}
+        <LeadPopup />
+
         {/* Contact Form */}
-        <ContactForm />
+        <div id="contacto">
+          <ContactForm />
+        </div>
         <Footer />
       </main>
     </div>
