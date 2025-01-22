@@ -7,6 +7,7 @@ import { FAQ } from "./components/FAQ";
 import { ContactForm } from "./components/ContactForm";
 import { Footer } from "./components/Footer";
 import { LeadPopup } from "./components/LeadPopup";
+import { ChatbotWidget } from "./components/ChatbotWidget";
 import streamingStation from './assets/streaming-station.webp';
 import ensambleImg from './assets/Ensamble.jpg';
 import prebuiltImg from './assets/pre-built.png';
@@ -669,6 +670,9 @@ function App() {
           <ContactForm />
         </div>
         <Footer />
+        
+        {/* Chatbot */}
+        <ChatbotWidget />
       </main>
     </div>
   );
