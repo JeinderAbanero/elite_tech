@@ -4,6 +4,7 @@ import crypto from 'crypto';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import Contact from './models/Contact.js';
+import Lead from './models/Lead.js';
 
 dotenv.config();
 
@@ -19,10 +20,10 @@ connectDB();
 // Routes
 app.post('/api/contact', async (req, res) => {
     try {
-        const { name, email, phone, message } = req.body;
+        const { name, email, service, budget, description } = req.body;
 
         // Validaciones básicas
-        if (!name || !email || !phone || !message) {
+        if (!name || !email || !service || !budget || !description) {
             return res.status(400).json({ error: 'Todos los campos son requeridos' });
         }
 
@@ -32,24 +33,55 @@ app.post('/api/contact', async (req, res) => {
             return res.status(400).json({ error: 'Email inválido' });
         }
 
+        // Validar servicio
+        const serviciosValidos = ['ensamble-personalizado', 'pc-preensamblada', 'asesoria-tecnica'];
+        if (!serviciosValidos.includes(service)) {
+            return res.status(400).json({ error: 'Servicio no válido' });
+        }
+
+        // Validar presupuesto
+        if (budget < 500 || budget > 5000) {
+            return res.status(400).json({ error: 'El presupuesto debe estar entre $500 y $5000' });
+        }
+
         // Crear nuevo contacto
         const contact = new Contact({
             name,
             email,
-            phone,
-            message
+            service,
+            budget,
+            description
         });
 
-        // Guardar en la base de datos
         await contact.save();
-
-        res.status(201).json({ 
-            message: 'Mensaje enviado exitosamente',
-            contact
-        });
-
+        res.status(201).json({ message: 'Contacto guardado exitosamente', contact });
     } catch (error) {
         console.error('Error al guardar el contacto:', error);
+        res.status(500).json({ error: 'Error al procesar la solicitud' });
+    }
+});
+
+// Lead Route
+app.post('/api/leads', async (req, res) => {
+    try {
+        const { email, userType, interests } = req.body;
+
+        // Validaciones básicas
+        if (!email || !userType || !interests || interests.length === 0) {
+            return res.status(400).json({ error: 'Todos los campos son requeridos' });
+        }
+
+        // Crear nuevo lead
+        const lead = new Lead({
+            email,
+            userType,
+            interests
+        });
+
+        await lead.save();
+        res.status(201).json({ message: 'Lead creado exitosamente', lead });
+    } catch (error) {
+        console.error('Error al crear lead:', error);
         res.status(500).json({ error: 'Error al procesar la solicitud' });
     }
 });
