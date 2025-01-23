@@ -195,9 +195,9 @@ function App() {
                   <span className="block text-2xl font-bold mb-1">¿No estás seguro de qué servicio necesitas?</span>
                   <span className="text-gray-300">Contáctanos y te ayudaremos a encontrar la mejor solución</span>
                 </div>
-                <button className="bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium whitespace-nowrap">
+                <a href="#contacto" className="bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium whitespace-nowrap">
                   Contactar ahora
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -476,9 +476,9 @@ function App() {
                   <span className="block text-xl sm:text-2xl font-bold mb-1">¿Buscas una configuración personalizada?</span>
                   <span className="text-gray-200 text-sm sm:text-base">Podemos adaptar cualquiera de estos equipos a tus necesidades específicas</span>
                 </div>
-                <button className="w-full sm:w-auto bg-yellow-500 text-black px-6 sm:px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium">
+                <a href="#contacto" className="w-full sm:w-auto bg-yellow-500 text-black px-6 sm:px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium">
                   Personalizar ahora
-                </button>
+                </a>
               </div>
             </div>
           </div>
