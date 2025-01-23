@@ -1,19 +1,13 @@
 import React from 'react';
 import { BestServiceCard } from './BestServiceCard';
+import gamerEliteImg from '../assets/Ensamble Gamer Elite X.jpg';
+import edicionImg from '../assets/PC Profesional para Edición 4K.jpg';
+import workstationImg from '../assets/Workstation Profesional Creativo.jpg';
 
-interface FeaturedProductsProps {
-  gamerEliteImg: string;
-  edicionImg: string;
-  workstationImg: string;
-}
-
-export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ 
-  gamerEliteImg, 
-  edicionImg, 
-  workstationImg 
-}) => {
+export const FeaturedProductsSection: React.FC = () => {
   return (
     <section 
+      id="productos"
       className="py-20"
       style={{ backgroundColor: '#657475' }}
     >
@@ -46,12 +40,17 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-flex gap-8 items-center justify-center bg-[#556465] p-6 rounded">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center bg-[#556465] p-6 rounded mx-4 sm:mx-0">
             <div className="text-white">
               <span className="block text-2xl font-bold mb-1">¿Buscas una configuración personalizada?</span>
               <span className="text-gray-200">Podemos adaptar cualquiera de estos equipos a tus necesidades específicas</span>
             </div>
-            <button className="bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium whitespace-nowrap">
+            <button 
+              onClick={() => {
+                document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-yellow-500 text-black px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors font-medium whitespace-nowrap"
+            >
               Personalizar ahora
             </button>
           </div>

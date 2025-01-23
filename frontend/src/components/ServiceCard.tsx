@@ -49,7 +49,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-lg"
           />
         </div>
         <h3 className="text-2xl font-bold mb-4 text-center" style={{ color: '#272B2C' }}>
