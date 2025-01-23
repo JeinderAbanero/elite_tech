@@ -2,9 +2,34 @@ import React, { useEffect } from 'react';
 
 export const ChatbotWidget = () => {
     useEffect(() => {
-        // Inicializar chatbase
-        const initChatbase = () => {
+        // Obtener la autenticación del servidor
+        const getChatbaseAuth = async () => {
+            try {
+                const response = await fetch('/api/chatbase-auth', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Error getting Chatbase auth');
+                }
+                
+                const { userId, hash } = await response.json();
+                return { userId, hash };
+            } catch (error) {
+                console.error('Error getting Chatbase auth:', error);
+                return null;
+            }
+        };
+
+        // Inicializar chatbase con autenticación
+        const initChatbase = async () => {
             if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                // Obtener autenticación
+                const auth = await getChatbaseAuth();
+                
                 window.chatbase = (...args: any[]) => {
                     if (!window.chatbase.q) {
                         window.chatbase.q = [];
@@ -20,6 +45,14 @@ export const ChatbotWidget = () => {
                         return (...args: any[]) => target(prop, ...args);
                     },
                 });
+
+                // Si tenemos autenticación, inicializar con ella
+                if (auth) {
+                    window.chatbase("init", {
+                        userId: auth.userId,
+                        userHash: auth.hash
+                    });
+                }
             }
         };
 
@@ -29,11 +62,15 @@ export const ChatbotWidget = () => {
             script.src = "https://www.chatbase.co/embed.min.js";
             script.id = "NiznS3p1kmDxeoU9frXP0";
             script.defer = true;
+            
+            script.onload = () => {
+                initChatbase();
+            };
+            
             document.body.appendChild(script);
         };
 
         // Inicializar y cargar
-        initChatbase();
         if (document.readyState === "complete") {
             loadChatbaseScript();
         } else {
@@ -50,6 +87,5 @@ export const ChatbotWidget = () => {
         };
     }, []);
 
-    // No necesitamos renderizar nada porque el script crea el botón del chat
     return null;
 };
